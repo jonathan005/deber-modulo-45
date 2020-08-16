@@ -1,20 +1,59 @@
 <header>
-
+    <div class="image">
+        <h2><span>Databinding en Angular</span></h2>
+        <img src="https://fondosmil.com/fondo/2318.jpg" alt="Imagen" />
+  </div>
 </header>
 <body>
-    <br>
-    <div style="text-align: center;">
-        <form [formGroup]="form">
-            <input type="text" formControlName="numero">
-        </form>
-        <br>
-        <button [disabled]=form.invalid (click)="verificarNumero()">
-            Verificar número
-        </button>
-        <br>
-        <br>
-        <label>
-            {{mensajeNumero}}
-        </label>
-    </div>
+    <mat-grid-list cols="4"  style="height: 100%;">
+        <mat-grid-tile [colspan]="3" style="height: 100%;">
+            <div style="text-align: center;height: 100%;padding: 100px;">
+                Databinding hace referencia a la lectura de propiedades definidas en un componente a través del DOM
+                o la plantilla HTML.
+                 <br>
+                Es posible pasar datos de dos formas, usando:
+                <hr>
+                <div class="comandos">
+                    - Comillas dobles o simples: 'parametro' o "parametro"<br>
+                    - Corchetes: {{'{'}}{{'{'}} parámetros {{'}'}}{{'}'}} <br>
+                </div>
+                <hr>
+                Cuando se requiere transmitir parámetros a un componente es necesario que dicho
+                componente tenga definido un @Input indicando que se recibirá datos. En este caso 
+                a nivel del DOM, la propiedad se la definirá de la siguiente manera:
+                <hr>
+                <div class="comandos">
+                    <img style="width: 50%;height: auto;" src="../../assets/images/inputcomponente.PNG"><br>
+                    <hr>
+                    <img style="width: 60%;height: auto;" src="../../assets/images/propiedadcomponenteHTML.PNG">
+                </div>
+                <hr>
+                Como podemos apreciar en las imagenes anteriores, se recibe un objeto de tipo IEnlace, si se requiere acceder
+                a una propiedad de un objeto, se usuará la siguiente estructura:
+                <hr>
+                <div class="comandos">
+                   -- variableObjeto.propiedad --<br>
+                   <img style="width: 51%;height: auto;" src="../../assets/images/propiedadesObjetos.PNG">
+                </div>
+                <hr>
+                Si por el contrario queremos enviar datos desde el componenete hacia la página, se usará el parámetro
+                @Output de tipo EventEmitter en el .ts del componente con una función que emita la info requerida,
+                <hr>
+                <div class="comandos">
+                    <img style="width: 51%;height: auto;" src="../../assets/images/ouptutcomponente.PNG">
+                    <img style="width: 61%;height: auto;" src="../../assets/images/outputhtml.PNG">
+                </div>
+                <hr>
+                Ahora a nivel de HTML se definen las rutas de la siguiente manera:
+                <hr>
+                <div class="comandos">
+                    <img style="width: auto; height: 300px;" src="../../assets/images/rutasHTML.PNG">
+                </div>
+                <hr>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile class="card" [colspan]="1" style="height: 100%;">
+            <app-enlaces-interes [enlaces]="enlaces" ></app-enlaces-interes>
+        </mat-grid-tile>
+      </mat-grid-list>  
 </body>

@@ -65,5 +65,8 @@ export class PrimeraSeccionComponent implements OnInit {
     console.log(this.mensaje);
   }
 
+  procesaPropagar(mensaje) {
+    console.log(mensaje);
+  }
 
 }

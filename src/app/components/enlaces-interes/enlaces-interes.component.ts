@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-enlaces-interes',
@@ -7,23 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EnlacesInteresComponent implements OnInit {
   @Input('enlaces') enlaces:IEnlace[];
-  //enlaces:IEnlace[];
+  @Output() propagar = new EventEmitter<string>();
   constructor() {
-  /*  this.enlaces =[
-      {
-        titulo: "TIULO",
-        link: "link"
-      },
-      {
-        titulo: "Titulo2",
-        link:'link2'
-      }
-    ]*/
    }
 
   ngOnInit() {
   }
-
+  onPropagar(mensaje) {
+    this.propagar.emit(mensaje);
+  }
 }
 export interface IEnlace{
   titulo:string;

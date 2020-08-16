@@ -29,10 +29,10 @@
                     import {{'{'}} PrimeraSeccionComponent {{'}'}} from './primera-seccion/primera-seccion.component';
                 </div>
                 <hr>
-                Y luego creamos una constante routes de tipo Route que contendrá el path y la referencia de los componentes
+                Y luego creamos una constante routes de tipo Routes que contendrá el path y la referencia de los componentes
                 a usar
                 <hr>
-                <div class="comandos" style="padding-left: 35%; text-align: left;">
+                <div class="comandos" style="padding-left: 25%; text-align: left;">
                     const routes: Routes = [<br>
                     {{'{'}} path: '', redirectTo: 'home', pathMatch: 'full'{{'}'}}, <br>
                     {{'{'}} path: 'home', component:HomeComponent{{'}'}}, <br>
@@ -42,10 +42,16 @@
                     ];
                 </div>
                 <hr>
+                Ahora a nivel de HTML se definen las rutas de la siguiente manera:
+                <hr>
+                <div class="comandos">
+                    <img style="width: auto; height: 300px;" src="../../assets/images/rutasHTML.PNG">
+                </div>
+                <hr>
             </div>
         </mat-grid-tile>
-        <mat-grid-tile class="card" [colspan]="1">
-            <app-enlaces-interes [enlaces]="enlaces" ></app-enlaces-interes>
+        <mat-grid-tile style="height: 100%; padding-top: 0px !important; -webkit-padding-start: 0px;" class="card" [colspan]="1">
+            <app-enlaces-interes [enlaces]="enlaces" (propagar)="procesaPropagar($event)"></app-enlaces-interes>
         </mat-grid-tile>
       </mat-grid-list>
     
