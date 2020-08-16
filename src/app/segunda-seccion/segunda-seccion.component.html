@@ -1,0 +1,20 @@
+<header>
+
+</header>
+<body>
+    <br>
+    <div style="text-align: center;">
+        <form [formGroup]="form">
+            <input type="text" formControlName="numero">
+        </form>
+        <br>
+        <button [disabled]=form.invalid (click)="verificarNumero()">
+            Verificar número
+        </button>
+        <br>
+        <br>
+        <label>
+            {{mensajeNumero}}
+        </label>
+    </div>
+</body>

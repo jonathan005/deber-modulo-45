@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <span class="fill-remaining-space">
+    <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+    <span (mouseleave)="menuTrigger.closeMenu()">
+      <button mat-menu-item [routerLink]="'/home'">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item [routerLink]="'primera-seccion'">
+        <mat-icon>people_outline</mat-icon>
+        <span>Primera sección</span>
+      </button>
+      <button mat-menu-item [routerLink]="'segunda-seccion'">
+        <mat-icon>videocam</mat-icon>
+        <span>Segunda sección</span>
+      </button>
+      <button mat-menu-item [routerLink]="'/tercera-seccion'">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Tercera sección</span>
+      </button>
+    </span>
+    </mat-menu>
+  </span>
+  <span class="fill-remaining-space">Mi página web</span>
+</mat-toolbar>
+<router-outlet></router-outlet>

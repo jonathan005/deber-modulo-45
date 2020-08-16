@@ -1,0 +1,52 @@
+<header>
+    <div class="image">
+        <h2><span>Navegación en Angular</span></h2>
+        <img src="https://fondosmil.com/fondo/2318.jpg" alt="Imagen" />
+  </div>
+</header>
+<body>
+    
+    <mat-grid-list cols="4"  style="height: 100%;">
+        <mat-grid-tile [colspan]="3" style="height: 100%;">
+            <div style="text-align: center;height: 100%;">
+                Antes de generar un nuevo proyecto, se recomienda hacerlo con el siguiente comando:
+                <hr>
+                <div class="comandos">
+                    ng new routing-app --routing
+                </div>
+                <hr>
+                Angular Routing nos va a permitir desplazarnos entre componentes/páginas, por lo que una vez creado
+                el proyecto, se procede a crear otro componente:
+                <hr>
+                <div class="comandos">
+                    ng g component primera-seccion
+                </div>
+                <hr>
+                Una vez que tengamos creado nuestro(s) componentes(s) nos dirigimos a app-routing-module e importamos
+                nuestro(s) componente(s).
+                <hr>
+                <div class="comandos">
+                    import {{'{'}} PrimeraSeccionComponent {{'}'}} from './primera-seccion/primera-seccion.component';
+                </div>
+                <hr>
+                Y luego creamos una constante routes de tipo Route que contendrá el path y la referencia de los componentes
+                a usar
+                <hr>
+                <div class="comandos" style="padding-left: 35%; text-align: left;">
+                    const routes: Routes = [<br>
+                    {{'{'}} path: '', redirectTo: 'home', pathMatch: 'full'{{'}'}}, <br>
+                    {{'{'}} path: 'home', component:HomeComponent{{'}'}}, <br>
+                    {{'{'}} path: 'primera-seccion', component: PrimeraSeccionComponent {{'}'}}, <br>
+                    {{'{'}} path: 'segunda-seccion', component: SegundaSeccionComponent {{'}'}}, <br>
+                    {{'{'}} path: 'tercera-seccion', component: TerceraSeccionComponent {{'}'}}, <br>
+                    ];
+                </div>
+                <hr>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile class="card" [colspan]="1">
+            <app-enlaces-interes [enlaces]="enlaces" ></app-enlaces-interes>
+        </mat-grid-tile>
+      </mat-grid-list>
+    
+</body>
