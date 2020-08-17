@@ -52,6 +52,7 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { EnlacesInteresComponent } from './components/enlaces-interes/enlaces-interes.component';
+import { CuartaSeccionComponent } from './cuarta-seccion/cuarta-seccion.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { EnlacesInteresComponent } from './components/enlaces-interes/enlaces-in
     routingComponents,
     HomeComponent,
     EnlacesInteresComponent,
+    CuartaSeccionComponent,
   ],
   imports: [
     FormsModule,
